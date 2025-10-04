@@ -1,6 +1,6 @@
 # 🖊️ Math Solver Web App
 
-A **Flask web application** that allows users to draw or upload mathematical expressions and equations on a canvas. The app uses **Tesseract OCR** to extract text from the image and **SymPy** to solve equations or evaluate arithmetic expressions.
+A **Flask web application** that allows users to draw mathematical expressions and equations on a canvas. The app uses **Tesseract OCR** to extract text from the image and **SymPy** to solve equations or evaluate arithmetic expressions.
 
 ---
 
