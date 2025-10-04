@@ -19,6 +19,16 @@ A **Flask web application** that allows users to draw mathematical expressions a
 
 ---
 
+## 🧠 How It Works
+
+- **Canvas Input**: User draws equation → converted to Base64 image.
+- **OCR Extraction**: Tesseract reads the image and extracts text.
+- **Cleaning**: Fixes common OCR errors and inserts missing multiplication symbols.
+- **Equation Solving**: Uses SymPy to evaluate expressions or solve equations.
+- **Output**: Returns solution to the frontend and displays it.
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Backend:** Python, Flask  
