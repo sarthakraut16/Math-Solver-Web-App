@@ -10,9 +10,8 @@ import re
 
 app = Flask(__name__)
 
-# ----------------------------
 # Detect Tesseract OCR
-# ----------------------------
+
 def detect_tesseract():
     possible_paths = [
         r"C:\Program Files\Tesseract-OCR\tesseract.exe",
@@ -32,9 +31,8 @@ if TESSERACT_PATH:
 else:
     print("⚠️ Warning: Tesseract OCR not found. Install it to enable OCR functionality.")
 
-# ----------------------------
 # Clean and normalize OCR text
-# ----------------------------
+
 def clean_expression(text):
     text = text.replace(" ", "").replace("\n", "")
     replacements = {
@@ -58,9 +56,8 @@ def clean_expression(text):
     return text
 
 
-# ----------------------------
 # Routes
-# ----------------------------
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -101,9 +98,9 @@ def solve():
         if not cleaned_expr:
             return jsonify({"expression": "", "result": "Could not detect valid expression"})
 
-        # ----------------------------
+        
         # Detect and Solve
-        # ----------------------------
+        
         if '=' in cleaned_expr:
             try:
                 lhs, rhs = cleaned_expr.split('=')
@@ -137,8 +134,5 @@ def solve():
         print("Server error:", e)
         return jsonify({"expression": "", "result": f"Error: {str(e)}"})
 
-# ----------------------------
-# Run the app
-# ----------------------------
 if __name__ == "__main__":
     app.run(debug=True)
